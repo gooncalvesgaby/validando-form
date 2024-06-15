@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40%;
+    margin: 20px auto;
+}
+
+input, button {
+    height: 2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
