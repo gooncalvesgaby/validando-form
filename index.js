@@ -23,14 +23,35 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-    if(validarEmail.value === "") {
+    if(validarEmail.value === "" || !emailValido(validarEmail.value)) {
         alert("Por favor informe o seu email");
         return;
     }
 
-    if(validarSenha.value === "") {
-        alert("Por favor digite sua senha");
+    if(validarSenha.value === "" || !validandoSenha(senha.value, 10)) {
+        alert("Por favor digite sua senha de min 10 digitos");
         return;
     }
     form.submit()
-})
+});
+
+function emailValido(email) {
+    const emailRegex = new RegExp(
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
+    );
+
+    if(emailRegex.test(email)) {
+        return true;
+    }
+    
+    return false;
+}
+
+function validandoSenha (senha, minDigits) {
+    if(senha.length >= minDigits) {
+        return true
+    }
+
+    return false
+
+}
