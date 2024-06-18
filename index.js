@@ -5,8 +5,10 @@ const validarCpf = document.querySelector("#cpf");
 const validarEmail = document.querySelector("#email");
 const validarSenha = document.querySelector("#senha");
 
+// form.addEventListener = toda vez que o usuario enviar os dados
+// vai ser realizado essa função que eu criar
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault(); // quero validar meu formulario antes dele ser enviado
 
     if(validarNome.value === "") {
         alert("Por favor preencha o campo com o seu nome");
@@ -32,9 +34,12 @@ form.addEventListener("submit", (event) => {
         alert("Por favor digite sua senha de min 10 digitos");
         return;
     }
+
+    // se todos os dados estiverem corretos, vai ser enviado o form:
     form.submit()
 });
 
+// função que valido se o email é valido
 function emailValido(email) {
     const emailRegex = new RegExp(
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
@@ -46,6 +51,8 @@ function emailValido(email) {
     
     return false;
 }
+
+// função que valida quantidade de digitos digitados na senha
 
 function validandoSenha (senha, minDigits) {
     if(senha.length >= minDigits) {
